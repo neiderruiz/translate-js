@@ -1,0 +1,33 @@
+{
+  "name": "@neidercode/translate-js",
+  "version": "1.0.0",
+  "description": "translate text usign javascript api free",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node esbuild.config.js"
+  },
+  "keywords": [
+    "translate-js",
+    "translate-files",
+    "translate-text"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/neidercode/translate-js.git"
+  },
+  "bugs": {
+    "url": "http://github.com/neidercode/translate-js/issues"
+  },
+  "author": {
+    "name": "Neider Ruiz",
+    "email": "neidercode@gmail.com",
+    "url": "http://github.com/neidercode/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "esbuild": "^0.15.7",
+    "node-fetch": "^3.2.10"
+  }
+}
