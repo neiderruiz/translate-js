@@ -1,6 +1,6 @@
 {
   "name": "@neiderruiz/translate-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "translate text usign javascript api free",
   "main": "dist/index.js",
   "scripts": {
