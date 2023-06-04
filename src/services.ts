@@ -120,7 +120,6 @@ export const TRANSLATE_SERIVES = [
   "translate.google.fi",
   "translate.google.fm",
   "translate.google.fr",
-  "translate.google.ga",
   "translate.google.ge",
   "translate.google.gg",
   "translate.google.gl",
