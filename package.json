@@ -1,5 +1,5 @@
 {
-  "name": "@neidercode/translate-js",
+  "name": "@neiderruiz/translate-js",
   "version": "1.0.0",
   "description": "translate text usign javascript api free",
   "main": "dist/index.js",
@@ -14,15 +14,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/neidercode/translate-js.git"
+    "url": "git://github.com/neiderruiz/translate-js.git"
   },
   "bugs": {
-    "url": "http://github.com/neidercode/translate-js/issues"
+    "url": "http://github.com/neiderruiz/translate-js/issues"
   },
   "author": {
     "name": "Neider Ruiz",
-    "email": "neidercode@gmail.com",
-    "url": "http://github.com/neidercode/"
+    "email": "neidebtc@gmail.com",
+    "url": "http://github.com/neiderruiz/"
   },
   "license": "MIT",
   "devDependencies": {
