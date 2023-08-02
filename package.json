@@ -1,11 +1,13 @@
 {
   "name": "@neiderruiz/translate-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "translate text usign javascript api free",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node esbuild.config.js"
+    "build": "tsc",
+    "prebuild": "rm -rf dist"
   },
   "keywords": [
     "translate-js",
@@ -27,7 +29,6 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.7.18",
-    "esbuild": "^0.15.7",
-    "node-fetch": "^3.2.10"
+    "typescript": "^5.1.6"
   }
 }

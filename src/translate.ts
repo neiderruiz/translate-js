@@ -1,18 +1,12 @@
-import fetch from "node-fetch";
 import { TRANSLATE_SERIVES } from "./services";
-type TypeTranslate = {
-  locale?: string;
-  text: string;
-  dest?: string;
-};
 
-const translate = async ({
-  text,
-  locale = "es",
-  dest = "en",
-}: TypeTranslate): Promise<boolean | string> => {
-  var service_rand =
-    TRANSLATE_SERIVES[(Math.random() * TRANSLATE_SERIVES.length) | 0];
+const translate = async (
+  text: string,
+  locale: string = "es",
+  dest: string = "en"
+): Promise<string> => {
+  const service_rand =
+    TRANSLATE_SERIVES[Math.floor(Math.random() * TRANSLATE_SERIVES.length)];
 
   const response = await fetch(
     `https://${service_rand}/translate_a/single?client=gtx&sl=${locale}&tl=${dest}&dt=t&q=${encodeURIComponent(
@@ -27,7 +21,8 @@ const translate = async ({
     }
   }
 
-  return false;
+  return '';
 };
+
 
 export { translate };
