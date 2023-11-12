@@ -1,18 +1,21 @@
 {
   "name": "@neiderruiz/translate-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "translate text usign javascript api free",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "prebuild": "rm -rf dist"
+    "prebuild": "rm -rf dist",
+    "check-services": "node dist/check-services.js"
   },
   "keywords": [
     "translate-js",
     "translate-files",
-    "translate-text"
+    "translate-text",
+    "neiderruiz",
+    "translate"
   ],
   "repository": {
     "type": "git",
