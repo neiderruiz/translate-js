@@ -52,7 +52,6 @@ export const TRANSLATE_SERIVES = [
   "translate.google.co.zw",
   "translate.google.com.af",
   "translate.google.com.ag",
-  "translate.google.com.ai",
   "translate.google.com.ar",
   "translate.google.com.au",
   "translate.google.com.bd",
