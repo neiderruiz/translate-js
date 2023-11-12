@@ -1,28 +1,41 @@
+import serviceRand from "./service-rand";
 import { TRANSLATE_SERIVES } from "./services";
+
 
 const translate = async (
   text: string,
   locale: string = "es",
   dest: string = "en"
 ): Promise<string> => {
-  const service_rand =
-    TRANSLATE_SERIVES[Math.floor(Math.random() * TRANSLATE_SERIVES.length)];
+  let attempts = 0;
+  const maxAttempts = 5; 
+  const delay = (ms: number) => new Promise(res => setTimeout(res, ms)); 
 
-  const response = await fetch(
-    `https://${service_rand}/translate_a/single?client=gtx&sl=${locale}&tl=${dest}&dt=t&q=${encodeURIComponent(
-      text.trim()
-    )}`
-  );
+  while (attempts < maxAttempts) {
+    try {
+      const response = await fetch(
+        `https://${serviceRand()}/translate_a/single?client=gtx&sl=${locale}&tl=${dest}&dt=t&q=${encodeURIComponent(
+          text.trim()
+        )}`
+      );
 
-  if (response.status === 200) {
-    const translation = await response.json();
-    if (Array.isArray(translation)) {
-      return translation[0][0][0];
+      if (response.status === 200) {
+        const translation = await response.json();
+        if (Array.isArray(translation)) {
+          return translation[0][0][0];
+        }
+      }
+    } catch (error) {
+      console.error(error);
+      attempts++;
+      await delay(1000); 
+      continue;
     }
   }
 
   return '';
 };
+
 
 
 export { translate };
