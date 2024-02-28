@@ -6,6 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.translate = void 0;
 const service_rand_1 = __importDefault(require("./service-rand"));
 const translate = async (text, locale = "es", dest = "en") => {
+    if (!text.trim()) {
+        return '';
+    }
     let attempts = 0;
     const maxAttempts = 5;
     const delay = (ms) => new Promise(res => setTimeout(res, ms));
@@ -15,7 +18,9 @@ const translate = async (text, locale = "es", dest = "en") => {
             if (response.status === 200) {
                 const translation = await response.json();
                 if (Array.isArray(translation)) {
-                    return translation[0][0][0];
+                    const results = translation[0];
+                    const text = results.map((trans) => trans[0]);
+                    return text.join('');
                 }
             }
         }
