@@ -7,6 +7,9 @@ const translate = async (
   locale: string = "es",
   dest: string = "en"
 ): Promise<string> => {
+  if(!text.trim()){
+    return '';
+  }
   let attempts = 0;
   const maxAttempts = 5; 
   const delay = (ms: number) => new Promise(res => setTimeout(res, ms)); 
@@ -22,7 +25,9 @@ const translate = async (
       if (response.status === 200) {
         const translation = await response.json();
         if (Array.isArray(translation)) {
-          return translation[0][0][0];
+          const results: any = translation[0] 
+          const text = results.map((trans: [string]) => trans[0])
+          return text.join('');
         }
       }
     } catch (error) {
